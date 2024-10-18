@@ -59,7 +59,7 @@ export const login = async (req, res) => {
     if (!user) {
       return res.status(400).json({
         message: "Incorrect email or password.",
-        success: false,
+        // success: false,
       });
     }
     const isPasswordMacth = await bcrypt.compare(password, user.password);
@@ -73,7 +73,7 @@ export const login = async (req, res) => {
     if (role !== user.role) {
       return res.status(400).json({
         message: "Account doesn't exist with current role.",
-        success: false,
+        // success: false,
       });
     }
     const tokenData = {
