@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { JOB_API_END_POINT } from "@/utils/constant";
+// import { JOB_API_END_POINT } from "@/utils/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllJobs } from "@/redux/jobSlice";
 
@@ -11,7 +11,7 @@ const useGetAllJobs = () => {
     const fetchAllJobs = async () => {
       try {
         const res = await axios.get(
-          `${JOB_API_END_POINT}/get?keyword=${searchedQuery}`,
+          `https://dream-job-deploy-1.onrender.com/get?keyword=${searchedQuery}`,
           {
             withCredentials: true,
           }
