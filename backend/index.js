@@ -9,9 +9,9 @@ import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 import path from "path";
 
-dotenv.config({});
+dotenv.config();
 connectDB();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const app = express();
 
 const _dirname = path.resolve();
