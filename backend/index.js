@@ -1,6 +1,7 @@
-import express from "express";
+import express ,{urlencoded}from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import userRoute from "./routes/user.route.js";
@@ -18,7 +19,8 @@ const _dirname = path.resolve();
 
 // middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(urlencoded({extended:true}))
 app.use(cookieParser());
 const corsOption = {
   origin: "https://dream-job-deploy-1.onrender.com",
