@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`https://dream-job-deploy-1.onrender.com/login`, input, {
+      const res = await axios.post("https://dream-job-deploy-1.onrender.com/login", input, {
         headers: {
           "Content-Type": "application/json",
         },
