@@ -42,14 +42,16 @@ const Login = () => {
         },
         withCredentials: true,
       });
-      // console.log(res.data.success)
+     console.log(res.data)
+      
       if (res.data.success) {
+
         dispatch(setUser(res.data.user));
         navigate("/");
         toast.success(res.data.message);
       }
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       toast.error(error.response.data.message);
     } finally {
       dispatch(setLoading(false));
