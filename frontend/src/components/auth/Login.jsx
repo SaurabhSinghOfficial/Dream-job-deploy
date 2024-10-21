@@ -36,13 +36,13 @@ const Login = () => {
 
     try {
       dispatch(setLoading(true));
-      const res = await axios.post("https://dream-job-deploy-1.onrender.com/login", e, {
+      const res = await axios.post("https://dream-job-deploy-1.onrender.com/login", input, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
       });
-     console.log(res.data)
+    //  console.log(res.data)
       
       if (res.data.success) {
 
@@ -52,7 +52,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
     } finally {
       dispatch(setLoading(false));
     }
